@@ -16,7 +16,6 @@ class BooksController < ApplicationController
         sort { |a,b| 
         b.favorited_users.includes(:favorites).where(created_at: from...to).size <=> 
         a.favorited_users.includes(:favorites).where(created_at: from...to).size 
-        
       }
    
     @book = Book.new
